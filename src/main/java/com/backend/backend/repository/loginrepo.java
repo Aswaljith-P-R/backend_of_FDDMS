@@ -1,10 +1,37 @@
 package com.backend.backend.repository;
 
+import com.backend.backend.model.login;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.backend.backend.model.login;
 
-@Repository  // Marks this as a Spring Data repository
+@Repository
 public interface loginrepo extends JpaRepository<login, Long> {
-    // Inherits methods like save(), findById(), findAll() from JpaRepository
+    login findByEmail(String email);
+    login findByUsername(String username);
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// package com.backend.backend.repository;
+
+// import org.springframework.data.jpa.repository.JpaRepository;
+// import org.springframework.stereotype.Repository;
+// import com.backend.backend.model.login;
+
+// @Repository  
+// public interface loginrepo extends JpaRepository<login, Long> {
+//     login findByUsername(String username);  // Custom method to find user by username
+// }
