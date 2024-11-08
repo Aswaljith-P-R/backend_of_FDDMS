@@ -15,13 +15,13 @@ public class inventorycontroller {
     private inventoryservice inventoryService;
 
     // Endpoint to add or donate food, incrementing the quantity
-    @PutMapping("/donate")
+    @PostMapping("/donate") // Change @PutMapping to @PostMapping
     public inventory donateFood(@RequestParam String foodItem, @RequestParam int quantity) {
         return inventoryService.donateFood(foodItem, quantity);
     }
 
     // Endpoint to receive food and decrement the quantity
-    @PutMapping("/receive")
+    @PostMapping("/receive") // Change @PutMapping to @PostMapping
     public inventory receiveFood(@RequestParam String foodItem, @RequestParam int quantity) {
         return inventoryService.receiveFood(foodItem, quantity);
     }

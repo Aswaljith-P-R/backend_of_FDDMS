@@ -33,11 +33,19 @@ public class receiver {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "status")
-    private String status;
+    // Enum for donation status
+    // public enum DonationStatus {
+    //     PENDING, RECEIVED, FAILED
+    // }
 
-    public receiver(){}
+    // @Enumerated(EnumType.STRING)
+    // @Column(name = "status")
+    // private DonationStatus status;  // Status field using enum type
 
+    // Default constructor
+    public receiver() {}
+
+    // Getters and setters
     public Long getId() {
         return id;
     }
@@ -102,12 +110,11 @@ public class receiver {
         this.name = name;
     }
 
-    public String getStatus() {
-        return status;
-    }
+    // public DonationStatus getStatus() {
+    //     return status;
+    // }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    
+    // public void setStatus(DonationStatus status) {
+    //     this.status = status;
+    // }
 }
